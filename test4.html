@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="/stepper.css" rel="stylesheet" />
+  <title>Static Template</title>
+  <style>
+    h2 {
+      margin: 5px;
+
+    }
+
+    .stepper-wrapper {
+      font-family: Arial;
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .stepper-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+    }
+
+    .stepper-item::before {
+      position: absolute;
+      content: "";
+      /* border-bottom: 1px dashed blue; */
+      width: 93%;
+      top: 20px;
+      left: -50%;
+      z-index: 2;
+    }
+
+    .stepper-item::after {
+      position: absolute;
+      content: "";
+      border-bottom: 1px dashed blue;
+      width: 84%;
+      top: 20px;
+      left: 57%;
+      z-index: 2;
+    }
+
+    /* .stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+} */
+
+    .stepper-item.active {
+      font-weight: bold;
+    }
+
+
+    .stepper-item:first-child::before {
+      content: none;
+    }
+
+    .stepper-item:last-child::after {
+      content: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="text-align: center;">
+    <a href="https://devrecipes.net/step-progres-bar-with-pure-css/">
+      Devrecipes.net - Step progress bar with pure CSS
+
+    </a>
+    </h1>
+    <div class="stepper-wrapper">
+      <div class="stepper-item completed">
+        <div class="step-">
+          <h2>1</h2>
+        </div>
+
+      </div>
+      <div class="stepper-item completed">
+        <div class="step-">
+          <h2>2</h2>
+        </div>
+      </div>
+      <div class="stepper-item active">
+        <div class="step-">
+          <h2>3</h2>
+        </div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-">
+          <h2>4</h2>
+        </div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-">
+          <h2>5</h2>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+
+
